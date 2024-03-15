@@ -11,15 +11,11 @@ it('can generate pdf', function () {
 
 
   $pdf = Pdf::view('pdfs.invoice', ['invoice' => $invoice])
-    ->withBrowsershot(function (Browsershot $browsershot) {
-      $browsershot->setNodeBinary('/usr/bin/node');
-      $browsershot->setNpmBinary('/usr/bin/npm');
-      $browsershot->noSandbox();
-    })
     ->format('a4')
     ->save('invoice.pdf');
 
-  expect($pdf)->toBeString();
+  //expect invoice.pdf file to exist in app root
+  expect(file_exists('invoice.pdf'))->toBeTrue();
 });
 
 // it('can render an invoice', function () {
