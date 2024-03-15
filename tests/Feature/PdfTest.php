@@ -17,16 +17,3 @@ it('can generate pdf', function () {
   //expect invoice.pdf file to exist in app root
   expect(file_exists('invoice.pdf'))->toBeTrue();
 });
-
-// it('can render an invoice', function () {
-//   Pdf::fake();
-
-//   $invoice = Invoice::factory()->create();
-
-//   $this->get(route('download-invoice', $invoice))
-//     ->assertOk();
-
-//   Pdf::assertRespondedWithPdf(function (PdfBuilder $pdf) {
-//     return $pdf->contains('test');
-//   });
-// });
