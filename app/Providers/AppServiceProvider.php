@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Pdf::default()
             ->withBrowsershot(function (Browsershot $browsershot) {
-                $browsershot->setOption('addLaunchArgs', ['--disable-dev-shm-usage'])->setOption('args', ['--no-sandbox'])->setChromePath('/usr/bin/chromium');
+                $browsershot->setChromePath('/usr/bin/chromium');
             });
     }
 }

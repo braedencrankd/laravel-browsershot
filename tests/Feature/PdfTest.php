@@ -14,6 +14,5 @@ it('can generate pdf', function () {
     ->format('a4')
     ->save('invoice.pdf');
 
-  //expect invoice.pdf file to exist in app root
   expect(file_exists('invoice.pdf'))->toBeTrue();
 });
